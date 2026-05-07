@@ -51,12 +51,35 @@ export default function App () {
   ativa: true,
 };
 
-
 const mario = {
   cliente: 'Mario',
   idade: 31,
   compras: 100000,
   ativa: false,
+};
+
+const paula = {
+  cliente: 'Paula',
+  idade: 27,
+  compras: [
+    {nome: "notebook", preco: "R$ 5426"},
+    {nome: "celular", preco: "R$ 2534"},
+    {nome: "garrafa", preco: "R$ 56"},
+    {nome: "cadeira", preco: "R$ 346"},
+  ],
+  ativa: true,
+};
+
+const robim = {
+  cliente: 'Robim',
+  idade: 20,
+  compras: [
+    {nome: "notebook", preco: "R$ 5426"},
+    {nome: "celular", preco: "R$ 2534"},
+    {nome: "garrafa", preco: "R$ 56"},
+    {nome: "cadeira", preco: "R$ 346"},
+  ],
+  ativa: true,
 };
 
 const App = () => {

@@ -197,6 +197,18 @@ style={{color: dados.ativa ? 'green' : 'red' } }>
   <h1>Situação da matricula: {dado.matricula ? <span style={{color: "green"}}> Ativo</span> : <span style={{color: "red"}}> Inativo</span>}</h1>
   <h1>Total: R$ {somarTotalCursos}</h1>
   {somarTotalCursos >  2500 && <h1 style={{color: "red"}}>Você esta gastando muito</h1>}
+
+  <h1>Lista de Cursos</h1>
+
+<ul>
+
+{dado.cursos.map (curso =>(
+
+<li key={curso.curso}>{curso.curso}</li>
+
+))}
+
+</ul>
 </div>
 
 

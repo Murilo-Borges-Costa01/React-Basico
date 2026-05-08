@@ -82,11 +82,53 @@ const robim = {
   ativa: true,
 };
 
-const App = () => {
-  const dados = luana;
+ const dados = luana;
 
-  return <div></div>;
-};
+const somarTotalCompras = Array.isArray(dados.compras)
+  ? dados.compras
+      .map(item => +item.preco.replace('R$','').trim())
+      .reduce((acumulador, itemAtual) => {
+        return acumulador + itemAtual
+      }, 0)
+  : dados.compras
+
+
+
+const Pedro = {
+nome:"Pedro",
+ idade: 22,
+ cursos: [{curso: "T.I", preco: "R$ 2000"},
+  {curso:"Mecanica", preco: "R$ 2500"},
+  {curso:"Eletrica", preco: "R$ 500"},
+],
+ matricula:false
+}
+
+const Anna = {
+nome:"Anna",
+ idade: 18,
+ cursos: [{curso: "Cozinheiro", preco: "R$ 2500"},
+  {curso:"Full Stack", preco: "R$ 3500"},
+  {curso:"Nautica", preco: "R$ 5000"},
+],
+ matricula:true
+}
+
+const dado = Anna
+
+const somarTotalCursos = dado.cursos
+.map(item => +item.preco.replace('R$','').trim())
+.reduce((acumulador, itemAtual) => {
+  return acumulador + itemAtual
+}, 0)
+// const App = () => {
+ 
+
+//   return <div></div>;
+// };
+
+
+
 
   return(
     <>
@@ -108,7 +150,7 @@ const App = () => {
     <h1 style={{color: false ? 'red' : 'violet'}}>Murilo Borges Costa 003</h1>
     <p>
     Murilo {
-    Murilo.possuiFaculdade ?
+    Murilo.faculdade ?
     <span style={{color: 'blue'}}>Sim, possui faculdade</span>
     :
     <span style={{color: 'red'}}>Não, possui faculdade</span> }
@@ -124,6 +166,54 @@ const App = () => {
 
 <h1>{luana.compras > 10000 ? <span style={estilo2}>Compras maior que 10000</span> : <span style={estilo3}>Compras menor que 10000</span>}</h1>
 <h1>{mario.compras > 10000 ? <span style={estilo2}>Compras maior que 10000</span> : <span style={estilo3}>Compras menor que 10000</span>}</h1>
+
+
+<div>
+  <p>Nome: {dados.cliente}</p>
+<p>Idade: {dados.idade}</p>
+
+<p>Situacao:
+
+<span
+
+style={{color: dados.ativa ? 'green' : 'red' } }>
+
+{dados.ativa ? ' Ativa' : ' Inativa'}
+
+</span>
+
+</p>
+
+<p>Total: R$ {somarTotalCompras}</p>
+
+{somarTotalCompras >  10000 && <p>Seu cansado, voce esta gastando muito</p>}
+
+</div>
+
+
+<div>
+  <h1>Nome: {dado.nome}</h1>
+  <h1>Idade: {dado.idade}</h1>
+  <h1>Situação da matricula: {dado.matricula ? <span style={{color: "green"}}> Ativo</span> : <span style={{color: "red"}}> Inativo</span>}</h1>
+  <h1>Total: R$ {somarTotalCursos}</h1>
+  {somarTotalCursos >  2500 && <h1 style={{color: "red"}}>Você esta gastando muito</h1>}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
